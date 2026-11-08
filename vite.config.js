@@ -8,4 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss(), // 2. 添加到插件列表
   ],
+  base: '/meow-creative-app/',   // 👈 替换为你的仓库名，首尾都要斜杠
 })
