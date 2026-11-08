@@ -27,7 +27,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22" # 推荐 LTS 版本
+          node-version: "22"
           cache: "npm"
 
       - name: Install dependencies
@@ -39,7 +39,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./dist" # Vite 默认构建输出目录
+          path: "./dist"
 
       - name: Deploy to GitHub Pages
         id: deployment
