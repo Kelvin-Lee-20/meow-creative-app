@@ -1,3 +1,8 @@
+// 1. 引入所有三个图片
+import japaneseWordMatchIcon from '../assets/japanese_word_match_app_icon.png';
+import purrMemoIcon from '../assets/purr_memo_icon.png';
+import kawaiiPhotoFrameIcon from '../assets/kawaii_photo_frame_app_icon.png';
+
 export default function Hero({ onScrollTo }) {
   return (
     <section className="relative overflow-hidden">
@@ -35,14 +40,31 @@ export default function Hero({ onScrollTo }) {
         </div>
 
         <div className="relative h-[380px] flex items-center justify-center">
-          <div className="absolute w-[230px] h-[230px] rounded-[56px] bg-[linear-gradient(135deg,#ff9dbd,#e93b81)] -rotate-[8deg] left-[4%] top-[8%] shadow-[0_20px_40px_rgba(233,59,129,0.3)] flex items-center justify-center text-white text-[88px] animate-[floaty_5s_ease-in-out_infinite]">
-            <i className="fa-solid fa-paw" />
+          {/* 左上角粉色框：purr_memo_icon */}
+          <div className="absolute w-[230px] h-[230px] rounded-[56px] bg-[linear-gradient(135deg,#ff9dbd,#e93b81)] -rotate-[8deg] left-[4%] top-[8%] shadow-[0_20px_40px_rgba(233,59,129,0.3)] flex items-center justify-center animate-[floaty_5s_ease-in-out_infinite] overflow-hidden">
+            <img 
+              src={purrMemoIcon} 
+              alt="Purr Memo App Icon" 
+              className="w-full h-full object-cover rounded-[56px]" 
+            />
           </div>
-          <div className="absolute w-[190px] h-[190px] rounded-[48px] bg-[linear-gradient(135deg,#d3e0ff,#7f9fe6)] rotate-[9deg] right-[2%] top-[2%] shadow-[0_20px_40px_rgba(127,159,230,0.35)] flex items-center justify-center text-white text-[72px] animate-[floaty_6s_ease-in-out_infinite]">
-            <i className="fa-solid fa-language" />
+          
+          {/* 右上角蓝色框：japanese_word_match_app_icon */}
+          <div className="absolute w-[190px] h-[190px] rounded-[48px] bg-[linear-gradient(135deg,#d3e0ff,#7f9fe6)] rotate-[9deg] right-[2%] top-[2%] shadow-[0_20px_40px_rgba(127,159,230,0.35)] flex items-center justify-center animate-[floaty_6s_ease-in-out_infinite] overflow-hidden">
+            <img 
+              src={japaneseWordMatchIcon} 
+              alt="Japanese Word Match App Icon" 
+              className="w-full h-full object-cover rounded-[48px]" 
+            />
           </div>
-          <div className="absolute w-[170px] h-[170px] rounded-[44px] bg-[linear-gradient(135deg,#ffe9a8,#ffb86b)] -rotate-[4deg] right-[18%] bottom-[0%] shadow-[0_20px_40px_rgba(255,184,107,0.35)] flex items-center justify-center text-white text-[64px] animate-[floaty_7s_ease-in-out_infinite]">
-            <i className="fa-solid fa-camera-retro" />
+
+          {/* 3. 右下角黄色框：替换为 kawaii_photo_frame_app_icon */}
+          <div className="absolute w-[170px] h-[170px] rounded-[44px] bg-[linear-gradient(135deg,#ffe9a8,#ffb86b)] -rotate-[4deg] right-[18%] bottom-[0%] shadow-[0_20px_40px_rgba(255,184,107,0.35)] flex items-center justify-center animate-[floaty_7s_ease-in-out_infinite] overflow-hidden">
+            <img 
+              src={kawaiiPhotoFrameIcon} 
+              alt="Kawaii Photo Frame App Icon" 
+              className="w-full h-full object-cover rounded-[44px]" 
+            />
           </div>
         </div>
       </div>

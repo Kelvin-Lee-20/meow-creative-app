@@ -1,3 +1,7 @@
+// 1. 在顶部导入你的小猫 Logo
+// 确保路径 '../assets/cat-logo.png' 与你实际的图片路径和文件名一致
+import catLogo from '../assets/cat-logo.png'; 
+
 export default function About() {
   const stats = [
     { value: '3', label: 'Apps released' },
@@ -8,8 +12,15 @@ export default function About() {
   return (
     <section id="about" className="bg-[var(--surface)] border-y border-solid border-[var(--line)]">
       <div className="max-w-[1160px] mx-auto px-[24px] py-[80px] grid grid-cols-1 md:grid-cols-2 gap-[48px] items-center">
-        <div className="rounded-[40px] bg-[linear-gradient(135deg,#ffe5e2,#b6c9f0)] min-h-[320px] flex items-center justify-center p-[32px]">
-          <i className="fa-solid fa-paw text-white text-[120px]" aria-hidden="true" />
+        
+        {/* 2. 替换左侧的渐变框内容 */}
+        <div className="rounded-[40px] -bg-[linear-gradient(135deg,#ffe5e2,#b6c9f0)] min-h-[320px] flex items-center justify-center p-[32px]">
+          <img 
+            src={catLogo} 
+            alt="Meow Creative App Studio Logo" 
+            // mix-blend-multiply 可以把图片的白色背景过滤掉，融入渐变背景
+            className="w-[240px] h-[240px] object-contain mix-blend-multiply drop-shadow-sm" 
+          />
         </div>
 
         <div>

@@ -1,3 +1,6 @@
+// 1. 在文件最顶部引入刚刚保存的图片
+import catLogo from '../assets/cat-logo.png'; // 请确保路径和文件名与你实际的一致
+
 export default function Header({ onScrollTo }) {
   return (
     <header className="sticky top-0 z-50 bg-[#fff7f4e6] backdrop-blur-[10px] border-b border-solid border-[var(--line)]">
@@ -6,9 +9,13 @@ export default function Header({ onScrollTo }) {
           className="flex items-center gap-[10px] font-['Fredoka'] font-[600] text-[20px] text-[var(--ink)]"
           onClick={() => onScrollTo('top')}
         >
-          <span className="w-[40px] h-[40px] rounded-[14px] bg-[linear-gradient(135deg,#ff9dbd,#e93b81)] text-white text-[20px] flex items-center justify-center">
-            <i className="fa-solid fa-cat" aria-hidden="true" />
-          </span>
+          {/* 2. 替换原来的 span 为 img 标签 */}
+          <img 
+            src={catLogo} 
+            alt="Meow Creative Logo" 
+            className="w-[40px] h-[40px] object-contain rounded-[14px]" 
+          />
+          
           <span>Meow Creative</span>
         </button>
 
