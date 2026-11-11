@@ -8,15 +8,8 @@ export default function Header({ onScrollTo }) {
         <button
           className="flex items-center gap-[10px] font-['Fredoka'] font-[600] text-[20px] text-[var(--ink)]"
           onClick={() => onScrollTo('top')}
-        >
-          {/* 2. 替换原来的 span 为 img 标签 */}
-          <img 
-            src={catLogo} 
-            alt="Meow Creative Logo" 
-            className="w-[40px] h-[40px] object-contain rounded-[14px]" 
-          />
-          
-          <span>Meow Creative</span>
+        >          
+          <span>Meow Creative App Studio</span>
         </button>
 
         <nav className="hidden md:flex items-center gap-[28px] font-[600] text-[16px]">
