@@ -18,11 +18,13 @@ export default function Hero({ onScrollTo }) {
             Little apps that make every day a bit more{' '}
             <span className="text-[var(--accent)]">purr-fect</span>
           </h1>
+          
+          {/* 👇 这里更新了文案 */}
           <p className="text-[var(--ink-muted)] text-[19px] max-w-[52ch] mt-[20px]">
             Meow Creative App Studio crafts cute, thoughtful iPhone apps for learning,
-            remembering and creating. Three apps are already on the App Store, and more
-            are on the way.
+            remembering and creating. Explore our latest releases, with more on the way.
           </p>
+
           <div className="flex flex-wrap gap-[14px] mt-[32px]">
             <button
               className="bg-[var(--accent)] text-[var(--on-accent)] font-[700] rounded-[999px] px-[30px] py-[14px] shadow-[0_10px_24px_rgba(233,59,129,0.3)] hover:opacity-90"
@@ -58,7 +60,7 @@ export default function Hero({ onScrollTo }) {
             />
           </div>
 
-          {/* 3. 右下角黄色框：替换为 kawaii_photo_frame_app_icon */}
+          {/* 右下角黄色框：kawaii_photo_frame_app_icon */}
           <div className="absolute w-[170px] h-[170px] rounded-[44px] bg-[linear-gradient(135deg,#ffe9a8,#ffb86b)] -rotate-[4deg] right-[18%] bottom-[0%] shadow-[0_20px_40px_rgba(255,184,107,0.35)] flex items-center justify-center animate-[floaty_7s_ease-in-out_infinite] overflow-hidden">
             <img 
               src={kawaiiPhotoFrameIcon} 
