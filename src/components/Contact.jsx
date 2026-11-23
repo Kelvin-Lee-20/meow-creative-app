@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const formRef = useRef(null);
@@ -14,8 +15,25 @@ export default function Contact() {
     }
     setShowValidation(false);
     setStatus('pending');
-    // Replace with your own submission endpoint.
-    setTimeout(() => setStatus('submitted'), 1200);
+
+    // 使用 emailjs.sendForm() 发送表单数据
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setStatus('submitted');
+          form.reset(); // 成功后清空表单
+        },
+        (error) => {
+          console.error('EmailJS FAILED...', error);
+          setStatus('error');
+        }
+      );
   };
 
   return (
@@ -43,7 +61,7 @@ export default function Contact() {
               </label>
               <input
                 id="c-name"
-                name="name"
+                name="name" // name 属性必须与 EmailJS 模板中的变量名对应
                 type="text"
                 required
                 className="rounded-[16px] bg-white text-[var(--ink)] px-[18px] py-[12px] focus:outline-[3px] focus:outline-solid focus:outline-[var(--accent)]"
@@ -54,7 +72,7 @@ export default function Contact() {
               </label>
               <input
                 id="c-email"
-                name="email"
+                name="email" // 同上
                 type="email"
                 required
                 className="rounded-[16px] bg-white text-[var(--ink)] px-[18px] py-[12px] focus:outline-[3px] focus:outline-solid focus:outline-[var(--accent)]"
@@ -65,7 +83,7 @@ export default function Contact() {
               </label>
               <textarea
                 id="c-msg"
-                name="message"
+                name="message" // 同上
                 rows={4}
                 required
                 className="rounded-[16px] bg-white text-[var(--ink)] px-[18px] py-[12px] focus:outline-[3px] focus:outline-solid focus:outline-[var(--accent)]"
